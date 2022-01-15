@@ -1,0 +1,21 @@
+﻿@model List<Category>
+<a href="/ManagerAdmin/Category/Create" class="btn btn">Create</a>
+<table class="table">
+    <thead>
+        <tr>
+             <th>#</th>
+
+            <th>Name</th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>

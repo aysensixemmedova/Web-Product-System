@@ -1,0 +1,33 @@
+﻿@model List<Product>
+<a class="btn btn-success" href="/ManagerAdmin/Product/Create">Create</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+             <th>Price</th>
+               <th>Category</th>
+              <th>Photo</th>
+
+                <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Price</td>
+                <td>@item.Category.Name</td>
+                <td>
+                    <img src="@item.PhotoUrl"/>
+                </td>
+             <td>
+                    <a class="btn btn-warning" href="/manageradmin/product/edit/@item.Id">Edit</a>
+                    <a class="btn btn-primary" href="/manageradmin/product/details/@item.Id">Detail</a>
+                    <a  class="btn btn-danger" href="/manageradmin/product/delete/@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
